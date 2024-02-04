@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Think Tech</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section class="sub-header">
+    <nav>
+      <a href="index.html"><img src="images/logo.png"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Our Services</h1>
+  </section>
+
+  <!-- services -->
+  <section class="container">
+    <h1>Our Services</h1>
+    <div class="service-row">
+      <div class="service">
+        <i class="fa-solid fa-laptop"></i>
+        <h2>Web Design</h2>
+        <p>Crafting digital excellence with precision and innovation.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-palette"></i>
+        <h2>Graphics</h2>
+        <p>Transform visions into stunning graphics with our expert design service.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h2>App Design</h2>
+        <p>Crafting seamless, stunning apps: Your vision, our expertise.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-chart-simple"></i>
+        <h2>Data Analysis</h2>
+        <p>Outsource your data analytics for actionable insights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----why us---- -->
+
+  <section class="why-us">
+    <div class="row">
+      <div class="why-col">
+        <h1>Why Choose Us ?</h1>
+        <p>Opt for ThinkTech to experience superior tech solutions. Our seasoned professionals deliver cutting-edge
+          expertise and innovative services tailored to your needs. We prioritize customer satisfaction, guaranteeing
+          reliable and robust tech solutions. Embrace the latest technologies with us, benefitting from our versatility
+          to adapt to unique demands. Trust ThinkTech for a seamless journey into tech excellence, where your success is
+          our priority. Elevate your digital experience with our commitment to innovation and reliability.</p>
+          <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+
+          <!-- comment-box -->
+        <div class="comment-cont">
+          <div class="comment-box">
+            <h3>Leave a comment</h3>
+            <form class="comment-form">
+              <input type="text" placeholder="Enter Name" id="name">
+              <input type="email" placeholder="Enter Email" id="email">
+              <textarea rows="5" placeholder="Your comment" id="message"></textarea>
+              <button type="button" class="hero-btn red-btn" onclick="sendFunc()">POST COMMENT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="why-col">
+        <img src="images/photo24.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ----footer---- -->
+  <footer>
+    <div class="foot-cont">
+      <div class="foot-row">
+        <div class="foot-col">
+          <div class="col1">
+            <img src="images/logo.png" class="logo">
+            <p>Elevate your digital journey with ThinkTech. We blend expertise and innovation to redefine tech
+              excellence. Welcome to a world where simplicity meets sophistication./p>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h3>Office</h3>
+          <p>XYZ Road, ABC Building</p>
+          <p>Kolkata, West Bengal</p>
+          <p>India</p>
+          <p class="email-id">abc@gmail.com</p>
+          <h4>+91-94989557XX</h4>
+        </div>
+        <div class="foot-col">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="foot-col">
+          <h3>Leave a Comment</h3>
+          <form action="">
+            <input type="text" placeholder="Enter Email" id="email">
+            <textarea rows="4" placeholder="Message" id="message"></textarea>
+            <button type="button" class="foot-btn" onclick="Send()">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="foot-row">
+        <div class="social-col">
+          <p>&#169; 2024 ThinkTech. All Rights Reserved.</p>
+        </div>
+        <div class="social-icons">
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-github"></i></a>
+          <a href=""><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-----Javascript for Toggle Menu---->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function Send() {
+      var message = document.getElementById("message").value;
+      var email = document.getElementById("email").value;
+
+      var body = "Email: " + email + "<br/> Message:" + message;
+
+      Email.send({
+        SecureToken: "08e8cd26-1732-44d0-9c78-3e7c99abe52d",
+        To: 'devx.264@gmail.com',
+        From: "devx.264@gmail.com",
+        Subject: "text",
+        Body: body
+      }).then(
+        message => {
+          if (message == 'OK') {
+            swal("Successful", "Your Data Is Successfully Recieved", "success");
+          }
+          else {
+            swal("Something Went Wrong", "Your Data Is Not Recieved", "error");
+          }
+        }
+      );
+    }
+  </script>
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+
+</body>
+
+</html>
